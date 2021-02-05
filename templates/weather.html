@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <title>Weather</title>
+</head>
+<body class="bg-dark text-light border-dark">
+    <header class="p-3 px-md-4 mb-3 bg-dark text-light text-center">
+        <p class="h5 my-0 me-md-auto fw-normal">Weather</p>
+    </header>
+    <div class="d-flex flex-wrap justify-content-around container">
+        <div class="row">
+            <div class="col mt-2">
+                <h2 class="text-center">Weather in your city</h2>
+                <form method="post" class="mt-4">
+                    {% csrf_token %}
+                    {{ form.name }}
+                    <input type="submit" class="text-danger bg-dark border-0 position-relative top"
+                           style="bottom: 32px; left: 85%" value=">>">
+                </form>
+                <div class="commands mt-3 mb-5">
+                    <h2 class="text-center mb-3">Commands</h2>
+                    <p><b>add &lbrack;CITY&rbrack;</b> - add city to Information</p>
+                    <p><b>rm &lbrack;CITY&rbrack;</b> - remove city from Information</p>
+                    <p><b>rm all</b> - remove all cities from Information</p>
+                    <p><b>get json</b> - get cities list in json</p>
+                </div>
+                <div class="info mt-3 mb-5">
+                    <h2 class="text-center">Info</h2>
+                    <p style="width: 350px">This is simple weather app application created for developers. Created in Django framework (Python).</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col mt-2">
+                <h2 class="text-center">Information</h2>
+                {% for inf in info %}
+                    <div class="alert alert-danger mt-4">
+                        <div class="d-flex justify-content-around">
+                            <div class="row-cols-8">
+                                <p class="mt-2"><b>City: </b>{{ inf.city }}</p>
+                                <p><b>Temp: </b>{{ inf.temp }} °C</p>
+                            </div>
+                            <div class="row-cols-7">
+                                <img src="https://openweathermap.org/img/wn/{{ inf.icon }}.png"
+                                 alt="Weather" class="img-thumbnail" style="background: rgba(0,0,0,0); border: none">
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>
