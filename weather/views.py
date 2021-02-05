@@ -1,4 +1,4 @@
-import requests
+import requests, os
 from django.shortcuts import render
 
 from .models import City
