@@ -10,4 +10,4 @@ rm all - remove all cities from Information
 
 get json - get cities list in json
 ## How to try without downloading?
-[This site deployed on PythonAnywhere](https://piterovar.pythonanywhere.com)
+[This site deployed on PythonAnywhere](https://piterovar.pythonanywhere.com) (Not recommended for use, adding and removing cities is visible for everyone)
