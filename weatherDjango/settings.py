@@ -5,7 +5,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = os.getenv('SECRET_KEY', random.randint(0, 999999999999))
 
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
