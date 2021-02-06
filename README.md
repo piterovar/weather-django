@@ -1,6 +1,14 @@
 # weather-django
 ## Info
 This is simple weather app application created for developers. Created in Django framework (Python).
+## Running
+```zsh
+git clone https://github.com/piterovar/weather-django.git
+cd weather-django/
+export API_KEY=[YOUR OPENWEATHERMAP API KEY]
+python manage.py runserver
+```
+Then run localhost:8000 on your browser
 ## Commands
 add [CITY] - add city to Information
 
